@@ -1,6 +1,10 @@
 ## About
 
-Google Fonts API URL Maker is a small php tool for generating Google Fonts v2 API from the supplied font data. The URL is generated as per [Google's Font API URL Specification](https://developers.google.com/fonts/docs/css2#forming_api_urls)
+Google Fonts API URL Maker is a php tool for generating Google Fonts v2 API URL from user provided font data. The URL is generated as per [Google Font's API URL Specification](https://developers.google.com/fonts/docs/css2#forming_api_urls)
+
+## Background
+While developing a Gutenberg plugin for WordPress, I needed some Typography controls for various elements like post title, excerpt, image captions, etc. Each typography control was a group of select/input fields like font-family, variant, font-size, line-height, text-transform, etc. The "font-family" and "variant" data was fetched from the Google fonts JSON data. After creating several controls for the typography, the main task was to combine this data and generate a Google Fonts API URL which can download necessary font files as chosen for each field. It was this requirement which led to the creation of the Google Fonts API URL Maker.
+
 
 ## Installation
 
@@ -36,7 +40,7 @@ $url = new GF_API_URL_Maker;
  * Markup will not be visible on frontend, view page source
  */
 
-echo $url->generateApiUrl( $fonts_data, $return = 'html' );</pre>
+echo $url->generateApiUrl( $fonts_data, $return = 'url' );</pre>
 
 Sample URL will look like:
 
