@@ -10,11 +10,14 @@ While developing a Gutenberg plugin for WordPress, I needed some Typography cont
 
 Download and include the class file inside your php project as:
 
-<pre>require_once( 'class_gf_api_url_maker.php' );</pre>
+```php
+require_once( 'class_gf_api_url_maker.php' );
+```
 
 Then provide sample fonts data from which you wish to generate the URL:
 
-<pre>$fonts_data = [
+```php
+$fonts_data = [
     [
         'family' => 'Noto Sans',
         'variant' => '100italic'
@@ -40,11 +43,14 @@ $url = new GF_API_URL_Maker;
  * Markup will not be visible on frontend, view page source
  */
 
-echo $url->generateApiUrl( $fonts_data, $return = 'url' );</pre>
+echo $url->generateApiUrl( $fonts_data, $return = 'url' );
+```
 
 Sample URL will look like:
 
-<pre>https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&family=Noto+Sans:ital,wght@1,100&family=Open+Sans:wght@100&display=swap</pre>
+```html
+https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&family=Noto+Sans:ital,wght@1,100&family=Open+Sans:wght@100&display=swap
+```
 
 See example.php for more details.
 
