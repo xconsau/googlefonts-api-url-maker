@@ -57,6 +57,11 @@ if ( ! class_exists( 'GF_API_URL_Maker' ) ) {
                 if ( ! empty ( $temp ) ) {
                     $filtered = [];
                     foreach( $temp as $key => $val ) {
+                        
+                        // Skip if the family name is 'Default'
+                        if ( 'Default' == $key )
+                            continue;
+                        
                         $variants_arr = [];
                         $swapped = [];
                         $val = str_replace( 'regular', '400', $val );            
